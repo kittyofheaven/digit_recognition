@@ -7,7 +7,7 @@ training_data, test_data = training_data / 255, test_data / 255
 
 model = tf.keras.Sequential([
     tf.keras.layers.Flatten(input_shape=(28, 28)),
-    tf.keras.layers.Dense(128, activation=tf.nn.relu),
+    tf.keras.layers.Dense(128, activation=tf.nn.relu), 
     tf.keras.layers.Dense(10, activation=tf.nn.softmax)
 ])
 
