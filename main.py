@@ -3,6 +3,7 @@ import numpy as np
 
 mnist = tf.keras.datasets.mnist
 (training_data, training_labels), (test_data, test_labels) = mnist.load_data()
+training_data, test_data = training_data / 255, test_data / 255
 
 model = tf.keras.Sequential([
     tf.keras.layers.Flatten(input_shape=(28, 28)),
