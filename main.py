@@ -22,5 +22,16 @@ model.evaluate(test_data, test_labels)
 # test mode accuracy for new data
 predictions = model.predict(test_data)
 np.set_printoptions(suppress=True)
-print(test_labels[0])
-print(predictions[0])
+print(test_labels[1])
+print(predictions[1])
+
+# test model save and load
+
+model.save("digitrecog_model.h5")
+
+new_model = tf.keras.models.load_model('digitrecog_model.h5')
+
+predictions = new_model.predict(test_data)
+np.set_printoptions(suppress=True)
+print(test_labels[1])
+print(predictions[1])
